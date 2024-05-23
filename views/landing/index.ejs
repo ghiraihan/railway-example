@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./landing.css">
+</head>
+<body>
+  <%- include('header') %>
+
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>title</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% kumpulanArtikel.forEach(function (value) { %>
+          <tr>
+            <td><%= value.id %></td>
+            <td><%= value.title %></td>
+            <td>
+              <a href="/api/article/detail/<%= value.id %>">
+                <button type="button">Detail</button>
+              </a>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <br>
+    <a href="/api/article/editor">
+      <button type="button">Tambah Artikel</button>
+    </a>
+  </div>
+</body>
+</html>

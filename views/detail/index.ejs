@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= dataArtikel.title %></title>
+</head>
+<body>
+  <h1><%= dataArtikel.title %></h1>
+  <p><%- dataArtikel.body.replace(/(\r\n)/g, '<br>') %></p>
+  <br>
+  <br>
+  <a href="/api/article">
+    <button type="button">Kembali</button>
+  </a>
+  <a href="/api/article/editor?update_id=<%= id %>">
+    <button type="button">Update</button>
+  </a>
+  <form 
+    action="/api/article/delete/<%= id %>?_method=DELETE" 
+    method="post"
+    style="display: inline;"
+  >
+    <button type="submit">Delete</button>
+  </form>
+</body>
+</html>
