@@ -1,0 +1,23 @@
+{
+  "name": "binar_26",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "dotenv-load nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-bi:ghiraihan/contoh-blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "pg": "^8.11.5"
+  },
+  "devDependencies": {
+    "dotenv-load": "^3.0.0",
+    "nodemon": "^3.1.0"
+  }
+}
