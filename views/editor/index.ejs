@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor</title>
+</head>
+<body>
+  <h1><%- !updateId ? 'CREATE' : 'UPDATE' %></h1>
+  <form 
+    action=<%- !updateId ? "/api/article/create" : `/api/article/update/${updateId}?_method=PUT` %> 
+    method="post"
+  >
+    <label for="title_txt">Judul</label><br>
+    <input 
+      placeholder="Isi judul artikel..." 
+      type="text" 
+      name="title" 
+      id="title_txt"
+      value=<%- !dataArtikel ? "" : dataArtikel.title %>
+    ><br>
+    <br>
+    <label for="body_txt">Isi</label><br>
+    <textarea placeholder="Tulis artikel disini..." name="body" id="body_txt" cols="30" rows="10"><%- !dataArtikel ? "" : dataArtikel.body %></textarea><br>
+    <br>
+    <a href=<%- !updateId ? "/api/article" : `/api/article/detail/${updateId}` %> >
+      <button type="button">Kembali</button>
+    </a>
+    <button type="submit">Simpan Artikel</button>
+  </form>
+</body>
+</html>
