@@ -1,7 +1,7 @@
 const express = require('express');
 const methodOverride = require('method-override');
 const cors = require('cors');
-const PORT = 3555;
+const PORT = process.env.PORT || 3555;
 
 const app = express();
 app.use(cors());
